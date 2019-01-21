@@ -50,31 +50,31 @@ impl<'a> NaiveArn<'a> {
         let partition = match elements.next() {
             None => return Err(ParseNaiveArnError::NotEnoughElements),
             Some("") => return Err(ParseNaiveArnError::MissingPartition),
-            Some(partition) => partition.into(),
+            Some(partition) => partition,
         };
 
         let service = match elements.next() {
             None => return Err(ParseNaiveArnError::NotEnoughElements),
             Some("") => return Err(ParseNaiveArnError::MissingService),
-            Some(service) => service.into(),
+            Some(service) => service,
         };
 
         let region = match elements.next() {
             None => return Err(ParseNaiveArnError::NotEnoughElements),
             Some("") => None,
-            Some(region) => Some(region.into()),
+            Some(region) => Some(region),
         };
 
         let account_id = match elements.next() {
             None => return Err(ParseNaiveArnError::NotEnoughElements),
             Some("") => None,
-            Some(account_id) => Some(account_id.into()),
+            Some(account_id) => Some(account_id),
         };
 
         let resource = match elements.next() {
             None => return Err(ParseNaiveArnError::NotEnoughElements),
             Some("") => return Err(ParseNaiveArnError::MissingResource),
-            Some(resource) => resource.into(),
+            Some(resource) => resource,
         };
 
         Ok(NaiveArn {
