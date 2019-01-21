@@ -3,5 +3,7 @@ name = "arn"
 version = "0.1.0"
 authors = ["Morley, Jonathan <morley.jonathan@gmail.com>"]
 edition = "2018"
+description = "ARN Parser"
+license = "Apache-2.0"
 
 [dependencies]
